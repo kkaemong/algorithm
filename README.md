@@ -4,8 +4,8 @@
 
 저는 **파이썬(Python)**을 사용하여 꾸준히 알고리즘 문제 풀이를 진행하며, 효율적인 자료구조 및 알고리즘 활용 능력을 향상시키는 것을 목표로 하고 있습니다. 모든 풀이는 자동으로 업로드되며, Python의 장점을 살린 간결하고 효율적인 코드를 담으려 노력합니다.
 
-주요 언어: Python 3
+주요 언어: Python, Java
 
-풀이 환경: PyCharm
+풀이 환경: PyCharm, IntelliJ IDEA CE
 
 자동화 도구: BaekjoonHub
