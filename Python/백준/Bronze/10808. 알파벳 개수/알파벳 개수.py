@@ -1,13 +1,14 @@
-word = input()
+S = input()
+
+# 2. 결과 저장용 리스트 (26개)
 arr = [0] * 26
-alpa = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-for i in range(len(word)):
-    char = word[i]
-    if char in alpa:
-        # 단어의 글자가 alpa 리스트의 몇 번째에 있는지 찾아서
-        idx = alpa.index(char)
-        # 그 위치(idx)의 숫자를 1 증가시킨다!
-        arr[idx] += 1
+# 3. 문자열을 돌며 즉시 인덱스 계산
+for char in S:
+    # ord(char) - ord('a')를 하면
+    # 'a'는 0, 'b'는 1, 'c'는 2... 가 나옵니다.
+    idx = ord(char) - ord('a')
+    arr[idx] += 1
 
+# 4. 결과 출력
 print(*arr)
