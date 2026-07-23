@@ -31,3 +31,21 @@ for tc in range(1,T+1):
         for _ in range(cnt[i]):
             print(word, end=' ')
     print()
+
+words = ['ZRO', 'ONE', 'TWO', 'THR', 'FOR', 'FIV', 'SIX', 'SVN', 'EGT', 'NIN']
+mydict = {word: i for i, word in enumerate(words)}   # 단어 -> 숫자 변환용
+
+T = int(input())
+for tc in range(1, T + 1):
+    N, M = input().split()
+    arr = input().split()
+
+    cnt = [0] * 10
+    for w in arr:
+        cnt[mydict[w]] += 1
+
+    print(f'#{tc}')
+    for i, word in enumerate(words):        # i는 숫자(0~9), word는 그에 대응하는 단어
+        for _ in range(cnt[i]):
+            print(word, end=' ')
+    print()
