@@ -3,8 +3,14 @@ for tc in range(1, T + 1):
     arr = input()
     brr = input()
 
-    if arr in brr:
-        print(f'#{tc} 1')
+    N = len(arr)
+    M = len(brr)
+
+    cnt = 0
+    for i in range(M):
+        if arr == brr[i:i+N]:
+            cnt = 1
+            print(f'#{tc} {cnt}')
+            break
     else:
-        print(f'#{tc} 0')
-    
+        print(f'#{tc} {cnt}')
