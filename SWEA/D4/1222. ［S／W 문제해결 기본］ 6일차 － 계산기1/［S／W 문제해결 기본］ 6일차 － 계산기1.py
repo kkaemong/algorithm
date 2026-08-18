@@ -1,17 +1,29 @@
 T = 10
 for tc in range(1, T + 1):
     N = int(input())
-    arr = list(input())
-    stack = []
+    tokens = list(input())
 
-    for token in arr:
+    stack = []
+    result = []
+
+    for token in tokens:
         if token.isdigit():
-            token = int(token)
+            result.append(token)
+        else:
+            while stack and stack[-1] == '+':
+                result.append(stack.pop())
             stack.append(token)
-        elif len(stack) == 2:
-            a = stack.pop()
-            b = stack.pop()
-            if token == '+':
+    while stack:
+        result.append(stack.pop())
+
+    for i in result:
+        if i.isdigit():
+            i = int(i)
+            stack.append(i)
+        else:
+            if i == '+':
+                b = stack.pop()
+                a = stack.pop()
                 stack.append(a + b)
 
-    print(f'#{tc} {sum(stack)}')
+    print(f'#{tc} {stack.pop()}')
